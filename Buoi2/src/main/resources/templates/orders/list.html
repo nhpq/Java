@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+<head>
+    <title>List Order</title>
+    <th:block th:replace="layout::link-css"></th:block>
+</head>
+<body>
+<th:block th:replace="layout::navbar"></th:block>
+<section layout:fragment="content" class="container mt-5">
+    <h1 class="mb-4">Order List</h1>
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Customer Name</th>
+            <th>Shipping Address</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Notes</th>
+            <th>Payment Method</th>
+            <th>Status</th>
+            <th sec:authorize="hasAuthority('ADMIN')">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.id}"></td>
+            <td th:text="${order.customerName}"></td>
+            <td th:text="${order.shippingAddress}"></td>
+            <td th:text="${order.phoneNumber}"></td>
+            <td th:text="${order.email}"></td>
+            <td th:text="${order.notes}"></td>
+            <td th:text="${order.paymentMethod}"></td>
+            <td>
+                <form th:object="${order}" th:action="@{/order/admin/orders/update}" method="post">
+                    <input type="hidden" th:name="id" th:value="${order.id}">
+                    <select class="form-control" th:name="status">
+                        <option value="PENDING" th:selected="${order.status == 'PENDING'}">Pending</option>
+                        <option value="SHIPPED" th:selected="${order.status == 'SHIPPED'}">Shipped</option>
+                        <option value="DELIVERED" th:selected="${order.status == 'DELIVERED'}">Delivered</option>
+                    </select>
+
+            <td>
+                <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>

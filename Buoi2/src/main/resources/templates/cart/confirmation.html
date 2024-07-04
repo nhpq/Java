@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2, h3 {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h2>Order Confirmation</h2>
+<p><strong>Customer Name:</strong> <span th:text="${order.customerName}"></span></p>
+<p><strong>Email:</strong> <span th:text="${order.email}"></span></p>
+<p><strong>Phone Number:</strong> <span th:text="${order.phoneNumber}"></span></p>
+
+<!-- Total Amount (Order) -->
+<p><strong>Total Amount (Order):</strong> <span th:text="${order.totalAmount}"></span></p>
+
+<h3>Order Details</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Loop through each order detail and display -->
+    <tr th:each="detail : ${order.orderDetails}">
+        <td th:text="${detail.product.name}"></td>
+        <td th:text="${detail.quantity}"></td>
+        <td th:text="${#numbers.formatDecimal(detail.product.price, 2, 'COMMA', 2, 'POINT')}"></td>
+        <td th:text="${#numbers.formatDecimal(detail.quantity * detail.product.price, 2, 'COMMA', 2, 'POINT')}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

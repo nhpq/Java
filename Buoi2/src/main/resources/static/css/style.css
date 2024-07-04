@@ -1,0 +1,363 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#footer .col-md-12 span {
+    font-weight: 500;
+}
+
+#footer .col-md-12 .block__socialMedia {
+    display: inline-block;
+    float: inline-end;
+}
+
+#footer .col-md-12 .block__socialMedia i {
+    margin-right: 20px;
+}
+
+.block__location .map, .block__location .call, .block__location .mail {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+#footer .block__location {
+}
+
+#footer .block__location span {
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: math;
+}
+
+#footer .block__location i {
+    font-size: 22px;
+}
+
+#footer .col-md-3 ul li {
+    padding: 5px 0px;
+}
+
+#footer .block__payment i {
+    margin-right: 12px;
+    font-size: 23px;
+    padding-top: 5px;
+}
+
+#footer .col-md-3 h5 {
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+
+#footer .col-md-12 p {
+    color: rgb(64, 63, 45);
+    padding-bottom: 20px;
+}
+
+#footer {
+    color: rgb(64, 63, 45);
+}
+
+#footer .col-md-12 h2 {
+    font-size: 45px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: rgb(64, 63, 45);
+}
+
+div#footer {
+    background: rgba(235,219,210,1);
+}
+
+#contact .col-md-7 iframe {
+    position: relative;
+    top: -200px;
+    left: 50px;
+    border-radius: 10px;
+}
+
+#contact .col-md-5 p {
+    font-size: 14px;
+    padding: 20px 0px;
+}
+
+#contact .col-md-5 h2 {
+    font-size: 70px;
+    font-family: 'Cormorant Upright';
+    padding-top: 20px;
+    color: rgb(64, 63, 45);
+}
+
+div#contact {
+    background: rgb(255, 247, 237);
+    height: 670px;
+}
+
+#weekendSale .col-md-12 h5 {
+    font-size: 18px;
+    padding: 60px 0px 20px 0px;
+    font-family: 'Prata';
+    color: rgb(255, 242, 242);
+}
+
+div#weekendSale {
+    background: url(../images/weekend.jpg) no-repeat;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+#ourMission .col-md-10 p {
+    padding-top: 50px;
+    font-size: 14px;
+    color: rgb(64, 63, 45);
+    padding-bottom: 20px;
+}
+
+#ourMission .ourMission__icon h6 {
+    color: rgb(64, 63, 45);
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+#ourMission .ourMission__icon i {
+    font-size: 35px;
+    border: 1px solid;
+    padding: 25px 26px;
+    border-radius: 50%;
+    color: rgb(64, 63, 45);
+}
+
+#ourMission .col-md-12 p {
+    color: rgb(64, 63, 45);
+    padding-top: 10px;
+}
+
+#ourMission {
+    background: rgb(235, 219, 210);
+}
+
+#ourMission .col-md-12 h2 {
+    font-family: 'Cormorant Upright';
+    font-size: 64px;
+    padding-top: 30px;
+    color: rgb(64, 63, 45);
+}
+
+#sanpham .sanpham__item--title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Prata';
+    font-size: 33px;
+    color: rgb(255, 223, 182);
+    font-weight: 600;
+    z-index: 3;
+}
+
+#sanpham .sanpham__item {
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+#sanpham .sanpham__item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff63;
+    border-radius: 25px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#sanpham .sanpham__item:hover::after {
+    opacity: 1;
+}
+
+#sanpham .sanpham__item img {
+    border-radius: 25px;
+    width: 415px;
+    height: 415px;
+}
+
+#sanpham {
+    background: rgb(255, 247, 237);
+}
+
+#sanpham .col-md-12 h2 {
+    font-family: 'Cormorant Upright';
+    font-size: 50px;
+    color: rgb(64, 63, 45);
+}
+
+#newIn .col-md-12 h2 {
+    font-family: "Prata";
+}
+
+#banner2 .title--phu span, #banner2 .title--phu i {
+    color: rgb(64, 63, 45);
+    padding: 10px 0px;
+}
+
+#banner2 .title--phu span {
+    font-family: 'Raleway';
+}
+
+#banner2 {
+    background: rgba(235,219,210,1);
+}
+
+#banner2 .banner__title h2 {
+    font-family: "EB Garamond", serif;
+    color: rgb(64, 63, 45);
+    font-size: 40px;
+}
+
+#newIn .newIn__item .icon--star {
+    color: gold;
+}
+
+#newIn .newIn__item .price {
+    font-size: 15px;
+    padding: 10px 0px;
+    font-family: math;
+    font-weight: 600;
+}
+
+#newIn .newIn__item img {
+    background: #0000000d;
+    border-radius: 10px;
+}
+
+#newIn {
+    background: rgb(255, 247, 237);
+}
+
+#newIn .newIn__item h3 {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.63);
+    font-weight: 600;
+    padding-top: 10px;
+    margin: 0;
+}
+
+#banner .banner__title button.btn--shopNow, #banner2 button.btn--shopNow, #ourMission button.btn--shopNow, #weekendSale button.btn--shopNow, #contact .btn--send {
+    padding: 9px 35px;
+    font-size: 14px;
+    background: var(--mauchudao);
+    border: 1px solid var(--mauchudao);
+    color: white;
+    border-radius: 20px;
+}
+
+#banner2 button.btn--shopNow {
+    margin-top: 20px;
+}
+
+#banner .banner__title p {
+    font-family: 'Cormorant Upright';
+    font-size: 22px;
+    color: rgb(255, 242, 226);
+    margin: 40px 0px;
+    font-weight: 600;
+}
+
+#banner .banner__title h2, #weekendSale h2 {
+    font-family: "Cormorant Upright", serif;
+    font-size: 70px;
+    color: rgb(255, 223, 182);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#banner .container {
+    position: relative;
+    z-index: 3;
+}
+.navbar ul li a.nav-link, .navbar ul li a.nav-link.active {
+	font-size: 14px;
+}
+.navbar ul li a.nav-link {
+    color: white;
+    border-bottom: 1px solid var(--mauchudao);
+
+}
+.navbar ul li a.nav-link.active {
+    color: rgba(255, 219, 176, 1);
+}
+
+.navbar ul li a.nav-link:hover {
+    color: rgba(255, 219, 176, 1);
+    border-bottom: 1px solid rgba(255, 219, 176, 1);
+}
+
+#banner2 .row {
+    align-items: center;
+}
+
+#banner2 .col-md-6 img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+#banner {
+    padding: 250px 0px;
+    background: url(../images/background.jpg) no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    top: 0;
+    left: 0;
+}
+
+#banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--mauchudao);
+    opacity: 0.7;
+}
+
+.navbar a.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar-brand span {
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    padding-left: 5px;
+}
+
+.navbar {
+    height: 100px;
+    background: var(--mauchudao);
+}
+
+.navbar .navbar-brand img {
+	width: 75px;
+	height: 75px;
+}
+:root {
+	--mauchudao: #9b7f70;
+}
+body {
+	font-family: "Raleway", sans-serif;
+}

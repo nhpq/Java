@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="${title} ?: 'Categories List'">Categories List</title>
+    <th:block th:replace="layout::link-css"></th:block>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            padding-top: 50px;
+        }
+
+        .btn-add {
+            margin-bottom: 20px;
+        }
+
+        .table {
+            background-color: #ffffff;
+        }
+
+        .table th {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        .table td,
+        .table th {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<th:block th:replace="layout::navbar"></th:block>
+<section layout:fragment="content" class="container">
+    <h1 class="mb-4">Categories List</h1>
+    <a th:href="@{/categories/add}" class="btn btn-primary btn-add">Add New Category</a>
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="category : ${categories}">
+            <td th:text="${category.id}"></td>
+            <td th:text="${category.name}"></td>
+            <td>
+                <a th:href="@{/categories/edit/{id}(id=${category.id})}"
+                   class="btn btn-success btn-sm">Edit</a>
+                <a th:href="@{/categories/delete/{id}(id=${category.id})}"
+                   class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>

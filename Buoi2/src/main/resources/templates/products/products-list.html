@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <title th:text="${title} ?: 'Product'">Product</title>
+  <th:block th:replace="layout::link-css"></th:block>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        padding-top: 50px;
+    }
+
+    .btn-add {
+        margin-bottom: 20px;
+    }
+
+    .table {
+        background-color: #ffffff;
+    }
+
+    .table th {
+        background-color: #343a40;
+        color: #ffffff;
+    }
+
+    .table td,
+    .table th {
+        vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<th:block th:replace="layout::navbar"></th:block>
+<section layout:fragment="content" class="container">
+  <h1 class="mb-4">Products List</h1>
+  <a th:href="@{/products/add}" class="btn btn-primary btn-add">Add New Product</a>
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Category Name</th>
+      <th>Quality</th> <!-- Thêm cột Quality -->
+      <th>Image</th> <!-- Thêm cột Image -->
+      <th>Actions</th>
+      <th>Add To Cart</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products}">
+      <td th:text="${product.id}"></td>
+      <td th:text="${product.name}"></td>
+      <td th:text="${product.price}"></td>
+      <td th:text="${product.description}"></td>
+      <td th:text="${product.category.name}"></td>
+      <td th:text="${product.quality}"></td> <!-- Hiển thị Quality -->
+      <td><img th:src="${product.imageData}" alt="Product Image"></td>
+      <td>
+        <a th:href="@{/products/edit/{id}(id=${product.id})}" class="btn btn-success btn-sm">Edit</a>
+        <a th:href="@{/products/delete/{id}(id=${product.id})}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+      </td>
+      <td>
+        <!-- Form thêm sản phẩm vào giỏ hàng trong products.html -->
+        <form th:action="@{/cart/add}" method="post">
+          <input type="number" name="quantity" min="1" th:max="${product.quality}" value="1" class="form-control d-inline-block" style="width: 70px;">
+          <input type="hidden" th:value="${product.id}" name="productId"/>
+          <button type="submit" class="btn btn-warning btn-sm">Add to Cart</button>
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+</body>
+</html>
